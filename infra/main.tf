@@ -22,7 +22,7 @@ locals {
 # Dead Letter Queues (DLQs)
 # -----------------------------------------------------------------------------
 resource "aws_sqs_queue" "dlq" {
-  for_each = locals.queues
+  for_each = local.queues
 
   name                      = "${each.value.name}-dlq-${var.environment}"
   message_retention_seconds = var.dlq_retention_seconds
@@ -38,7 +38,7 @@ resource "aws_sqs_queue" "dlq" {
 # Main SQS Queues
 # -----------------------------------------------------------------------------
 resource "aws_sqs_queue" "main" {
-  for_each = locals.queues
+  for_each = local.queues
 
   name                       = "${each.value.name}-${var.environment}"
   visibility_timeout_seconds = var.visibility_timeout_seconds

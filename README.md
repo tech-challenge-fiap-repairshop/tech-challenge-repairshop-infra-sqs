@@ -33,7 +33,7 @@ tech-challenge-repairshop-infra-sqs/
 ├── .github/workflows/         # Pipeline Terraform Plan & Apply (GitHub Actions)
 ├── infra/
 │   ├── environments/          # dev.tfvars, hml.tfvars, prd.tfvars
-│   ├── backend.tf             # Remote state S3 (bucket: fiap-repairshop2)
+│   ├── backend.tf             # Remote state S3 (bucket: fiap-repairshop-{ACCOUNT_ID})
 │   ├── main.tf                # 5 Filas SQS + 5 DLQs + Políticas de Redrive
 │   ├── outputs.tf             # URLs e ARNs das filas
 │   ├── providers.tf           # Configuração do AWS Provider
